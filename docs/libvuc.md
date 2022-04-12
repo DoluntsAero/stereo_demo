@@ -20,7 +20,7 @@
 Находиться командой
 
 ```
-$ lsusb -v
+$ v4l2-ctl --list-formats-ext --device /dev/video'X'
 ```
 
 А также индех устройства
