@@ -12,15 +12,23 @@
 
 ### Адресс устройства 
 
-```<param name="vendor" value="0x0c45"/>
+```
+   <param name="vendor" value="0x0c45"/>
    <param name="product" value="0x64ab"/>
-
 ```
 
 Находиться командой
 
 ```
 $ lsusb -v
+```
+
+А также индех устройства
+
+`правая/левая`
+
+```
+<param name="index" value="0"/>
 ```
 
 ### Права удев для доступа к камере
