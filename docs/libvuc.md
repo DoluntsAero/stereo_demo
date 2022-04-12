@@ -4,7 +4,7 @@
 
 [libuvc_camera](http://wiki.ros.org/libuvc_camera)
 
-[libuvc_ros](hhttp://wiki.ros.org/libuvc_ros)
+[libuvc_ros](http://wiki.ros.org/libuvc_ros)
 
 ---
 
