@@ -6,7 +6,7 @@
         args="$(arg optical_rotate) base_link camera_link 100" /> 
 
   <include file="~/stereo_demo/launch/libvuc_camera.launch" />
-  <include file="~/stereo_demo/launch/stereo_proc.launch" />
+  <!-- <include file="~/stereo_demo/launch/stereo_proc.launch" /> -->
 
 <!-- Choose visualization -->
   <arg name="rtabmapviz"              default="false" /> 

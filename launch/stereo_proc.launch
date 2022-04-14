@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <group ns="/stereo" >   
+  <group ns="stereo" >   
     <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc"/>
   </group>
 </launch>

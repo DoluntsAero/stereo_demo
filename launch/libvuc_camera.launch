@@ -45,6 +45,8 @@
       <param name="auto_white_balance" value="true"/>
     </node>
 
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc"/>
+    
   </group>
 
     <node name="web_video_server" pkg="web_video_server" type="web_video_server" if="$(arg web_video_server)" required="false" respawn="true" respawn_delay="5">
