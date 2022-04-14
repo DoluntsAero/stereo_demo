@@ -1,4 +1,7 @@
 <launch>
+
+  <arg name="web_video_server" default="true"/>
+
     <node pkg="libuvc_camera" type="camera_node" name="left" ns="stereo/left"> 
       <!-- Parameters used to find the camera -->
       <param name="vendor" value="0x0c45"/>
