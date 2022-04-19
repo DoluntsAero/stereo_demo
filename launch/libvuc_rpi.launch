@@ -20,8 +20,8 @@
 
       <param name="frame_id" value="camera_link"/>
 
-      <param name="auto_exposure" value="0"/> <!-- use aperture_priority auto exposure -->
-      <param name="auto_white_balance" value="true"/>
+      <!-- <param name="auto_exposure" value="0"/> -->
+      <!-- <param name="auto_white_balance" value="true"/> -->
     </node>
 
   </group>
