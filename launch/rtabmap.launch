@@ -5,15 +5,12 @@
    <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
         args="$(arg optical_rotate) base_link camera_link 100" /> 
 
-  <include file="~/stereo_demo/launch/libvuc_camera.launch" />
-  <!-- <include file="~/stereo_demo/launch/stereo_proc.launch" /> -->
-
 <!-- Choose visualization -->
   <arg name="rtabmapviz"              default="false" /> 
   <arg name="rviz"                    default="true" />
   
   <!-- Corresponding config files -->
-  <arg name="rtabmapviz_cfg"          default="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" />
+  <!-- <arg name="rtabmapviz_cfg"          default="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" /> -->
   <arg name="rviz_cfg"                default="-d $(find rtabmap_ros)/launch/config/rgbd.rviz" />
   
   <arg name="frame_id"                default="base_link"/>     <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
