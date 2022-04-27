@@ -1,0 +1,17 @@
+<launch>
+   <arg name="pi/2" value="1.5707963267948966" />
+   <arg name="optical_rotate" value="0 0 0 -$(arg pi/2) 0 -$(arg pi/2)" />
+   <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
+        args="$(arg optical_rotate) base_link camera_link 100" /> 
+        
+      <group ns="stereo">
+           <node pkg="uvc_camera" type="uvc_stereo_node" name="mycam">
+           <!-- Parameters used to find the camera -->
+           <param name="left/device" value="/dev/video2"/>
+           <param name="right/device" value="/dev/video4"/>
+           <param name="width" value="640" />
+           <param name="height" value="480" />
+           <param name="frame_id" value="camera_link"/>
+           </node>
+      </group>
+</launch>
