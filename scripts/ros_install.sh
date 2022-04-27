@@ -10,15 +10,11 @@ sudo apt update
 
 sudo apt install -y ros-noetic-desktop-full
 
-# sudo apt install -y ros-noetic-ros-base
-
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
 source ~/.bashrc
 
-sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-
-sudo apt install python3-rosdep
+sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential ros-noetic-libuvc-camera
 
 sudo rosdep init
 
