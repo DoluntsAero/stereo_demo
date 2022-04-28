@@ -9,8 +9,8 @@
            <!-- Parameters used to find the camera -->
            <param name="left/device" value="/dev/video2"/>
            <param name="right/device" value="/dev/video4"/>
-           <param name="width" value="800" />
-           <param name="height" value="600" />
+           <param name="width" value="640" />
+           <param name="height" value="480" />
            <param name="frame_id" value="camera_link"/>
            </node>
       </group>

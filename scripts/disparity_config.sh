@@ -1,6 +1,6 @@
 #!/bin/bash
 
-roslaunch launch/libvuc_camera.launch &
+roslaunch launch/rpi_stereo.launch &
 
 rosrun stereo_image_proc stereo_image_proc __ns:=stereo _approximate_sync:=true &
 
