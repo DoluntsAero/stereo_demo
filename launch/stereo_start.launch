@@ -7,8 +7,8 @@
       <group ns="stereo">
            <node pkg="uvc_camera" type="uvc_stereo_node" name="mycam">
            <!-- Parameters used to find the camera -->
-           <param name="left/device" value="/dev/video2"/>
-           <param name="right/device" value="/dev/video4"/>
+           <param name="left/device" value="/dev/video5"/>
+           <param name="right/device" value="/dev/video7"/>
            <param name="width" value="800" />
            <param name="height" value="600" />
            <param name="frame_id" value="camera_link"/>
