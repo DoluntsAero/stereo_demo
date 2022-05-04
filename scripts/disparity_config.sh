@@ -1,6 +1,6 @@
 #!/bin/bash
 
-roslaunch launch/rpi_stereo.launch &
+roslaunch launch/stereo_start.launch &
 
 rosrun stereo_image_proc stereo_image_proc __ns:=stereo _approximate_sync:=true &
 

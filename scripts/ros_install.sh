@@ -11,6 +11,7 @@ sudo apt update
 sudo apt install -y ros-noetic-desktop-full
 
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 source ~/.bashrc
 
