@@ -3,7 +3,7 @@
    <include file="$(find stereo_demo)/launch/image_proc.launch" />
         
       <group ns="stereo">
-           <node pkg="uvc_camera" type="uvc_stereo_node" name="mycam">
+           <node pkg="uvc_camera" type="uvc_stereo_node" name="camera">
            <!-- Parameters used to find the camera -->
            <param name="left/device" value="/dev/video7"/>
            <param name="right/device" value="/dev/video5"/>
