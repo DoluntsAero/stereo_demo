@@ -1,0 +1,11 @@
+[Unit]
+Description=ROS package
+Requires=roscore.service
+
+[Service]
+User=firefly
+ExecStart=/bin/bash -c ". /home/firefly/catkin_ws/devel/setup.sh; \
+                      ROS_HOSTNAME=firefly.local exec stdbuf -o L roslaunch stereo_demo avoidance.launch --wait --screen --skip-log-check"
+
+[Install]
+WantedBy=multi-user.target
