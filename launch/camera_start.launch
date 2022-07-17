@@ -1,40 +1,24 @@
 <launch>
-    <group ns="stereo">
+  <arg name="pi/2" value="1.5707963267948966" />
+  <arg name="optical_rotate" value="0 0 0 -$(arg pi/2) 0 -$(arg pi/2)" />
 
-        <node pkg="libuvc_camera" type="camera_node" name="left">
-            <param name="vendor" value="0x046d"/> <!-- Parameters used to find the camera -->
-            <param name="product" value="0x0825"/>
-            <param name="serial" value="0"/>
-            <param name="index" value="1"/> <!-- If the above parameters aren't unique, choose the second match: -->
-            
-            <param name="width" value="640"/> <!-- Image size and type -->
-            <param name="height" value="480"/>
-            <param name="video_mode" value="mjpeg"/> <!-- choose whichever uncompressed format the camera supports: yuyv/nv12/mjpeg -->
-            <param name="frame_rate" value="30"/>
-            
-            <param name="frame_id" value="camera_link"/>
-            
-            <param name="auto_exposure" value="1"/> <!-- use aperture_priority auto exposure -->
-            <param name="auto_white_balance" value="true"/>
-            <param name="brightness" value="100"/>
-        </node>
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
+        args="$(arg optical_rotate) base_link stereo_link 100" /> 
         
-        <node pkg="libuvc_camera" type="camera_node" name="right">
-            <param name="vendor" value="0x046d"/> <!-- Parameters used to find the camera -->
-            <param name="product" value="0x0825"/>
-            <param name="serial" value="0"/>
-            <param name="index" value="0"/> <!-- If the above parameters aren't unique, choose the first match: -->
-            
-            <param name="width" value="640"/> <!-- Image size and type -->
-            <param name="height" value="480"/>
-            <param name="video_mode" value="mjpeg"/> <!-- Choose whichever uncompressed format the camera supports: yuyv/nv12/mjpeg -->
-            <param name="frame_rate" value="30"/>
-            <param name="frame_id" value="camera_link"/>
-            
-            <param name="auto_exposure" value="1"/> <!-- use aperture_priority auto exposure -->
-            <param name="auto_white_balance" value="true"/>
-            <param name="brightness" value="100"/>
-        </node>
+  <group ns="stereo">
+    <node pkg="uvc_camera" type="uvc_stereo_node" name="mycam">
+      <param name="left/device" value="/dev/video5"/>
+      <param name="right/device" value="/dev/video7"/>
+      <param name="width" value="320" />
+      <param name="height" value="240" />
+      <param name="frame_id" value="stereo_link"/>
+      <param name="fps" type="int" value="120" />
+      <param name="left/camera_info_url" type="string" value="package://stereo_demo/cfg/mono_120_l.yaml" />
+      <param name="right/camera_info_url" type="string" value="package://stereo_demo/cfg/mono_120_r.yaml" />
+    </node>
 
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc"/>
+    
   </group>
+  
 </launch>

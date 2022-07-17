@@ -1,4 +1,0 @@
-<launch>
-    <include file="$(find stereo_demo)/launch/camera_start.launch" />
-    
-</launch>
